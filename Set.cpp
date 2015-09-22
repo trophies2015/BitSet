@@ -15,8 +15,10 @@ struct BitSet
 		}
 	}
 	BitSet operator* (const BitSet & other) const{
-		const vector <T> & ot = other.se; 
-			
+		const vector <T> & ot = other.se;
+		vector <T> ans; 
+		for (int g=0; g<ot.size(); g++) ans.push_back(ot[g]&se[g]); 
+		return BitSet (ans);  
 	}
 };
 int main(){
